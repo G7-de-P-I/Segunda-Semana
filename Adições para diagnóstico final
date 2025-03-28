@@ -1,0 +1,400 @@
+nome = {}
+
+def criar_lista_sustentabilidade():
+    """Cria uma lista dos ní­veis de sustentabilidade."""
+
+    sustentabilidade = [
+    "Alta: 30 - 40 (10pts)",
+    "Moderada: 20 - 29 (5pts)",
+    "Baixa: 8 - 19 (2pts)"
+    ]
+    return sustentabilidade
+
+def exibir_lista_sustentabilidade(lista):
+    """Exibe a lista de sustentabilidade."""
+
+    print("Ní­veis de Sustentabilidade:")
+    for item in lista:
+        print(f"- {item}")
+
+def tela_boas_vindas():
+    """Exibe a tela de boas-vindas e processa a entrada do usuário."""
+    print(" ")
+    print("BEM VINDO AO SUSTENTA")
+    print("\n------------------------------------------------------------------")
+    print("\nA sustentabilidade começa com pequenas escolhas diárias que fazem uma grande diferença no mundo. O Sustentaí­ é um projeto criado para inspirar e desafiar você a viver de forma mais sustentável.")
+
+    print("\n------------------------------------------------------------------")
+    print("\nDesafio Sustentaí­")
+    print("\n------------------------------------------------------------------")
+    print("\nDescubra seu ní­vel de sustentabilidade! Participe do nosso desafio e descubra como suas ações impactam o planeta. A cada passo, você aprende, evolui e contribui para um futuro mais verde e consciente. Estão pronto para fazer a diferença? Vamos juntos nessa jornada sustentável!")
+    print("\n1. Como funciona")
+    print("2. Começar")
+    print("3. Cadastrar")
+
+    opcao = input("\nDigite uma opção (1 , 2 ou 3): ")
+
+    if opcao == "1":
+        exibir_como_funciona()
+    elif opcao == "2":
+        tela_login()
+    elif opcao == "3":
+        tela_cadastro()
+    else:
+        print("Opção inválida. Tente novamente.")
+        tela_boas_vindas()
+
+def exibir_como_funciona():
+    """Exibe o texto explicando como o Sustentaí­ funciona."""
+
+    print("------------------------------------------------------------------")
+    print("Como funciona:")
+    print("------------------------------------------------------------------")
+    print("O Desafio se baseia em 4 fases (Consumo de água, energia, resí­duos e transporte). Para cada fase há uma classificação podendo ser (Alta, Moderada e Baixa Sustentabilidade), com uma determinada pontuaação para cada (Alta = 10; Moderada = 5; Baixa = 2). Ao final do Desafio diário somaremos cada classificaçãoo de cada fase, obtendo uma pontuação que determinarão seu nÃ­vel total de sustentabilidade. Observe abaixo a ponderação para seu ní­vel total de sustentabilidade:")
+    print(" ")
+
+
+lista_sustentabilidade = criar_lista_sustentabilidade()
+exibir_lista_sustentabilidade(lista_sustentabilidade)
+
+input("\nPara voltar ao menu principal pressione Enter")
+tela_boas_vindas()
+
+
+def tela_login():
+
+
+    print("------------------------------------------------------------------")
+    print("Login")
+    print("------------------------------------------------------------------")
+    print("Olá! Para começarmos nosso desafio, precisamos te conhecer!")
+    usuario = input("\nDigite seu nome de usuário: ")
+    senha = input("Digite sua senha: ")
+
+
+    print(f"\nUsuário: {usuario}")
+    print(f"Senha: {senha}")
+    print("Login realizado com sucesso!")
+    tela_desafios()
+
+
+
+def tela_cadastro():
+
+    print("------------------------------------------------------------------")
+    print("Cadastro")
+    print("------------------------------------------------------------------")
+
+    nome = input(f"\n Nome: ")
+    email = input(f"\n Email: ")
+    cpf = int(input(f"\n CPF: "))
+    cep = int(input(f"\n CEP: "))
+    senha = input(f"\n Senha: ")
+    print("\n\n Cadastro Realizado!!")
+    input("\nPara continuar pressione Enter")
+    tela_boas_vindas()
+
+
+def tela_desafios():
+
+    print("\n\n--------------------------------------------------------------")
+    print("\nDESAFIOS")
+    print("\n----------------------------------------------------------------")
+    print("\n1. Desafio água ")
+    print("2. Desafio resíduos ")
+    print("3. Desafio energia")
+    print("4. Desafio transporte")
+
+    print("\n-------------------------------------")
+
+    escolha = int(input("\n Escolha Qual desafio deseja Começa!!!\n "))
+
+
+
+
+
+tela_boas_vindas()
+
+
+#CODIGO - PARTE LIVIA
+print(" ")
+print("DESAFIO 1 - ÁGUA:")
+print("")
+print("Agora que te conhecemos bem (nome), esperamos que nos ajude a realizar nosso desafio nº1!")
+print("")
+print("COMO MEDIR SEU CONSUMO:")
+print("")
+print("1- Encontre o hidrômetro - Normalmente, ele fica na parte externa da casa, na garagem ou no jardim.")
+print("2- Anote os números - Veja os números pretos no visor do hidrômetro. Eles indicam o consumo total em metros cúbicos (m*3)." )
+print("3- Faça o valor dividido por 30 (valor/30) se for sua primeita vez no desafio")
+print("")
+consumoagua1=float(input("Qual o seu consumo de água em metros cúbicos (m*3)? "))
+print("")
+consumoagua=consumoagua1*1000
+
+if (consumoagua<150):
+    print("Seu nível no DESAFIO 1 - ÁGUA É: ALTA SUSTENTABILIDADE ") #print("+10 pontos")
+    pontos1 = 10
+if ((consumoagua>=150) and (consumoagua<=200)):
+    print("Seu nível no DESAFIO 1 - ÁGUA É: MODERADA SUSTENTABILIDADE ") #print("+5 pontos")
+    pontos1 = 5
+if (consumoagua>200):
+    print("Seu nível no DESAFIO 1 - ÁGUA É: BAIXA SUSTENTABILIDADE ") #print("+2 pontos")
+    pontos1 = 2
+pontos_total = pontos1
+print(f"\nVocê ganhou {pontos1} pontos neste desafio!")
+
+print("")
+print("Escolha uma opção: 1- CONTINUAR 2- VOLTAR")
+print("")
+opção=float(input("Digite a opção escolhida:"))
+
+if (opção==1):
+    print("TELA DE DESAFIOS")
+    print("")
+    print("DESAFIO 1 - ÁGUA: CONCLUIDO")
+    print("DESAFIO 2 - RESÍDUOS: NÃO CONCLUIDO")
+    print("DESAFIO 3 - ENERGIA: NÃO CONCLUIDO")
+    print("DESAFIO 4 - TRANSPORTE: NÃO CONCLUIDO")
+    print("")
+    print("CLIQUE NO (DESAFIO 2 - RESÍDUOS) PARA CONTINUAR O DESAFIO")
+    print("")
+    print("Escolha uma opção: 1 - (DESAFIO 2 - RESÍDUOS)  2- VOLTAR")
+    print("")
+    opçao3=float(input("Digite a opção escolhida:"))
+    
+if (opçao3==1):
+    print("")
+    print("DESAFIO 2 - RESÍDUOS:")
+    print("")
+    print("DESAFIO RESÍDUOS PARTE 1")
+    print("")
+    print("Para concluir esse desafio, pense nas embalagens recicláveis e não recicláveis: ")
+    print("")
+    print("COMO MEDIR SEU CONSUMO DE RESÍDUOS:")
+    print("")
+    print("1- Separe os resíduos - Divida seu lixo em dois sacos: ")
+    print("\tRECICLÁVEIS: Plásticos, papéis, vidros e metais limpos.")
+    print("\tNÃO RECICLÁVEIS: Restos de comida, papel higiênico, embalagens sujas, etc." )
+    print("2- Pese os sacos - Use uma balança doméstica para medir o peso de cada tipo de resíduo")
+    print("3- Registre os valores - Anote a quantidade (peso) de lixo reciclável e não reciclável que você produz em um dia. ")
+    print("")
+    consumoresíduos1=float(input("Quanto pesa seu lixo reciclável em gramas(g)? "))
+    print("")
+    print("Escolha uma opção: 1 - CONTINUAR 2- VOLTAR")
+    print("")
+    opçao4=float(input("Digite a opção escolhida: "))
+    print("")
+
+if (opçao4==1):
+    print("DESAFIO RESÍDUOS PARTE 2")
+    print("")
+    print("Para concluir esse desafio, pense nas embalagens recicláveis e não recicláveis: ")
+    print("")
+    print("COMO MEDIR SEU CONSUMO DE RESÍDUOS:")
+    print("")
+    print("1- Separe os resíduos - Divida seu lixo em dois sacos: ")
+    print("\tRECICLÁVEIS: Plásticos, papéis, vidros e metais limpos.")
+    print("\tNÃO RECICLÁVEIS: Restos de comida, papel higiênico, embalagens sujas, etc." )
+    print("2- Pese os sacos - Use uma balança doméstica para medir o peso de cada tipo de resíduo")
+    print("3- Registre os valores - Anote a quantidade (peso) de lixo reciclável e não reciclável que você produz em um dia. ")
+    print("")
+    consumoresíduos2=float(input("Quanto pesa seu lixo não reciclável em gramas(g)? "))
+    print("")
+
+if (consumoresíduos1>consumoresíduos2*1.5):
+    print("Seu nível no DESAFIO 2 - RESÍDUOS É: ALTA SUSTENTABILIDADE")
+    pontos2 = 10
+    pontos_total = pontos1+pontos2
+    print(f"\nVocê ganhou {pontos2} pontos neste desafio!")
+if ((consumoresíduos1>=consumoresíduos2*1.2) and (consumoresíduos1<=consumoresíduos2*1.5)):
+    print("Seu nível no DESAFIO 2 - RESÍDUOS É: MODERADA SUSTENTABILIDADE")
+    pontos2 = 5
+    pontos_total = pontos1+pontos2
+    print(f"\nVocê ganhou {pontos2} pontos neste desafio!")
+if (consumoresíduos1<consumoresíduos2*0.8):
+    print("Seu nível no DESAFIO 2 - RESÍDUOS É: BAIXA SUSTENTABILIDADE")
+    pontos2 = 2
+    pontos_total = pontos1+pontos2
+    print(f"\nVocê ganhou {pontos2} pontos neste desafio!")
+    print("")
+    print("\nEscolha uma opção: 1- CONTINUAR 2- VOLTAR")
+    print("")
+    opção5=float(input("Digite a opção escolhida:"))
+    print("")
+    
+if (opção5==1):
+    print("TELA DE DESAFIOS")
+    print("")
+    print("DESAFIO 1 - ÁGUA: CONCLUIDO")
+    print("DESAFIO 2 - RESÍDUOS: CONCLUIDO")
+    print("DESAFIO 3 - ENERGIA: NÃO CONCLUIDO")
+    print("DESAFIO 4 - TRANSPORTE: NÃO CONCLUIDO")
+    print("")
+    print("CLIQUE NO (DESAFIO 3 - ENERGIA) PARA CONTINUAR O DESAFIO")
+    print("")
+    print("Escolha uma opção: 1 - (DESAFIO 3 - ENERGIA)  2- VOLTAR")
+    print("")
+    opçao6=float(input("Digite a opção escolhida:"))
+    print("")
+    
+if (opçao6==1):
+    print("DESAFIO 3 - ENERGIA ")
+if (opçao6==2):
+    print("TELA INICIAL:")
+    
+if (opção5==2):
+    print("TELA DE DESAFIOS")
+    print("")
+    print("DESAFIOS NÃO CONCLUIDOS, CLIQUE EM (DESAFIO 1 - ÁGUA) PARA COMEÇAR")
+    print("Escolha uma opção: 1 - DESAFIO ÁGUA 2- VOLTAR")
+    opçao2=float(input("Digite a opção escolhida:"))
+    
+if (opção==2):
+    print("TELA DE DESAFIOS")
+    print("")
+    print("DESAFIOS NÃO CONCLUIDOS, CLIQUE EM (DESAFIO 1 - ÁGUA) PARA COMEÇAR")
+    print("Escolha uma opção: 1 - DESAFIO ÁGUA 2- VOLTAR")
+    opçao2=float(input("Digite a opção escolhida:"))
+    
+if (opçao2==1):
+    print("DESAFIO 1 - ÁGUA")
+if (opçao2==2):
+    print("TELA INICIAL")
+
+#Código parte - Lucas
+
+print("\nDESAFIOS")
+print("\n-------------------------------------")
+print("\n1. Desafio água (concluído)")
+print("2. Desafio resíduos (concluído)")
+print("3. Desafio energia")
+print("4. Desafio transporte")
+print("\n-------------------------------------")
+
+desafio1 = int(input("\nEscolha um desafio que ainda não foi concluído, para fazê-lo. Digite 3 para energia ou 4 para transporte: "))
+
+# DESAFIO 3 - ENERGIA
+if desafio1 == 3:
+    print("\nDESAFIO 3 - ENERGIA")
+    print("\n--------------------------------------")
+    print("\nQuase lá! Estamos perto de saber seu nível de sustentabilidade! Saber seu consumo de energia é essencial para completar o desafio.")
+    print("\n--------------------------------------")
+    print("\nComo verificar seu consumo:")
+    print("\n1. Pegue sua conta de energia -")
+    print("Encontre a fatura referente ao mês atual.")
+    print("\n2. Localize o consumo mensal -")
+    print("Procure a informação de consumo total, geralmente expressa em kWh (quilowatt-hora).")
+    print("\n--------------------------------------")
+
+    kwh = float(input("\nDigite quanto você gasta de energia em Kwh: "))
+
+    # Nível de sustentabilidade para energia
+    if kwh < 100:
+        print("Seu nível no DESAFIO 3 - ENERGIA É: ALTA SUSTENTABILIDADE")
+        pontos3 = 10
+    elif 100 <= kwh <= 200:
+        print("Seu nível no DESAFIO 3 - ENERGIA É: MODERADA SUSTENTABILIDADE")
+        ponros3 = 5
+    else:
+        print("Seu nível no DESAFIO 3 - ENERGIA É: BAIXA SUSTENTABILIDADE")
+        pontos3 = 2
+    pontos_total = pontos1+pontos2+pontos3
+    print(f"\nVocê ganhou {pontos3} pontos neste desafio!")
+
+# DESAFIO 4 - TRANSPORTE
+print("\nDESAFIOS")
+print("\n-------------------------------------")
+print("\n1. Desafio água (concluído)")
+print("2. Desafio resíduos (concluído)")
+print("3. Desafio energia (concluído)")
+print("4. Desafio transporte")
+print("\n-------------------------------------")
+
+desafio2 = int(input("\nEscolha um desafio que ainda não foi concluído, para fazê-lo. Digite 4 para transporte: "))
+
+if desafio2 == 4:
+    print("\nDESAFIO 4 - TRANSPORTE")
+    print("\n----------------------------------------")
+    print("\nExcelente! Você passou por quase todos os desafios, conclua o desafio 4 para descobrir o quão sustentável você é.")
+    print("\n----------------------------------------")
+    print("\nQual meio de transporte você utilizou hoje? (preencha com 0 para os que não utilizou)")
+    print("\n----------------------------------------")
+
+    meiotransp1 = int(input("\nSem gasto de energia e com energia elétrica (a pé, bicicleta, patinete ou outro meio): "))
+    meiotransp2 = int(input("\nComunitário (ônibus, carona ou outro meio): "))
+    meiotransp3 = int(input("\nPrivado e combustíveis fósseis (carro): "))
+
+    # Nível de sustentabilidade para transporte
+    total_transporte = meiotransp1 + meiotransp2 + meiotransp3
+
+    if meiotransp1 > meiotransp2 and meiotransp1 > meiotransp3:
+        print("Seu nível no DESAFIO 4 - TRANSPORTE É: ALTA SUSTENTABILIDADE")
+        pontos4 = 10
+    elif meiotransp2 > meiotransp1 and meiotransp2 > meiotransp3:
+        print("Seu nível no DESAFIO 4 - TRANSPORTE É: MODERADA SUSTENTABILIDADE")
+        pontos4 = 5
+    else:
+        print("Seu nível no DESAFIO 4 - TRANSPORTE É: BAIXA SUSTENTABILIDADE")
+        pontos4 = 2
+    pontos_total = pontos1+pontos2+pontos3+pontos4
+    print(f"\nVocê ganhou {pontos4} pontos neste desafio!")
+print("\n-------------------------------------")
+
+#PARTE VICTÓRIA
+def menu_principal():
+    while True:
+        try:
+            nivel_sustentabilidade = pontos1 + pontos2 + pontos3 + pontos4
+        except NameError:
+            nivel_sustentabilidade = 0
+            print("\n----------------------------------------------------------------------\n")
+            print("\nPARABÉNS, VOCÊ CONCLUIU O DESAFIO SUSTENTAÍ!")
+            print("Agora você poderá saber o quão sustentável você é!")
+            print("\nNível de sustentabilidade:", nivel_sustentabilidade)
+            print("\nAgora escolha uma opção: (1) Sair e encerrar o programa (2) Levantamento de dados")
+            op = int(input("Digite a opção desejada: "))
+
+            if op == 1:
+                print("\nVocê encerrou o programa.")
+                break
+            elif (op==2):
+                print("\nVamos lá...")
+                print("\n----------------------------------------------------------------------\n")
+                print("LEVANTAMENTO DE DADOS")
+                print("Vamos ver detalhes da sua performance...")
+                print("\nAgora você poderá saber o quão sustentável você é e onde pode melhorar, caso necessário!")
+                print("Nível de sustentabilidade de acordo com cada desafio: ")
+                print(f"\nDesafio 1: {pontos1} pontos")
+                print(f"\nDesafio 2: {pontos2} pontos")
+                print(f"\nDesafio 3: {pontos3} pontos")
+                print(f"\nDesafio 4: {pontos4} pontos")
+
+                total_pontos = pontos1 + pontos2 + pontos3 + pontos4 #Posso adicionar os pontos para cálculo final nas demais telas?
+                if total_pontos > 0:
+                    porcentagem1 = (pontos1 / total_pontos) * 100
+                    porcentagem2 = (pontos2 / total_pontos) * 100
+                    porcentagem3 = (pontos3 / total_pontos) * 100
+                    porcentagem4 = (pontos4 / total_pontos) * 100
+                else:
+                    print("\nAinda não há pontos registrados. Tente completar os desafios!")
+                print("\nDistribuição percentual dos pontos:")
+                print(f"\nDesafio 1: {porcentagem1:.2f}%")
+                print(f"\nDesafio 2: {porcentagem2:.2f}%")
+                print(f"\nDesafio 3: {porcentagem3:.2f}%")
+                print(f"\nDesafio 4: {porcentagem4:.2f}%")
+                print("\nEscolha uma opção:")
+                print("(1) Voltar ao menu principal")
+                print("(2) Obter dicas")
+                print("(3) Sair")
+                opcao10 = int(input("Digite a opção desejada: "))
+                if opcao10 == 1:
+                    print("\nVoltando ao menu principal...")
+                    continue
+                elif opcao10==2:
+                    print("Tela de dicas") #Inserir (Rafael), chamar tela 
+                elif opcao10== 3:
+                    print("\nVocê encerrou o programa. Até mais!")
+                    break
+                else:
+                    print("\nOpção inválida! Tente novamente.")
